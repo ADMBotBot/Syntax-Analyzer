@@ -208,3 +208,25 @@ class Parser:
 
 if __name__ == '__main__':
         Parser(sys.argv[1])
+        
+#Citation #1: The link provided has few examples of what the filter function can do. In my code,
+#             it uses the lambda within the filter function to take out the unnecessary "\n" found
+#             in the lexeme/token list. In by doing so, a new list is obtained that has all the
+#             lexeme and token pairs without the newline character.
+#             (Link: https://www.geeksforgeeks.org/filter-in-python/)
+
+#Citation #2: From user godidier, it was shown how to exit out of a program using the sys library.
+#             This was used in the code so the program will exit if the bounds within the
+#             lexeme/token list is out of bounds as to not make repeated recursive calls.
+#             (Link: https://stackoverflow.com/questions/14639077/how-to-use-sys-exit-in-python)
+
+#Citation #3: In the textbook, pages 175 - 178, it gives the code excerpt for recursive-descent parsing.
+#             My code uses parts of the code that was shown but my code accounts for little bit more tweaking.
+#             Since it is legal to not have an assignment operator, it needs to determine if the next
+#             operator is under <expr> or under <term>. Another difference is that under <factor>,
+#             after the right paren, the code checks if another operator is in use. If so, it goes
+#             to the correct method. And, the last couple of things, the program will terminate when
+#             the index is out of bounds as to not recursive call itself and run into memory leak and
+#             the code uses a statement checker. The statement checker determines if the next expression
+#             should start a new statement, if so, it will go to the <stmnt> method and run through the new
+#             expression.
